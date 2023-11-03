@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+build/
+
+install/
+
+2017-10-31-22-06-52/
+
+log/
