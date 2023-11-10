@@ -82,11 +82,12 @@ ament_export_targets(
 
 install(DIRECTORY
   launch
+  config
   DESTINATION share/${PROJECT_NAME}
 )
 
-install(DIRECTORY
-  config
+install(FILES
+  rosbag2.zip
   DESTINATION share/${PROJECT_NAME}
 )
 
