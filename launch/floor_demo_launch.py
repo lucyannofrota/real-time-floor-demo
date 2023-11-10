@@ -20,8 +20,14 @@ def generate_launch_description():
     if not cond:
         print("\n\n\n\n\n################################################################################")
         print("ROS bag not extracted.\nTrying to extract from \'{}rosbag2.zip\'".format(pkg_path+'/'))
-        os.system("unzip " + pkg_path +"/rosbag2.zip")
+        os.system("unzip " + pkg_path +"/rosbag2.zip" + ' -d ' + pkg_path)
         print("################################################################################\n\n\n\n\n")
+
+    print(pkg_path+'/2017-10-31-22-06-52/')
+    print(pkg_path+'/2017-10-31-22-06-52/')
+    print(pkg_path+'/2017-10-31-22-06-52/')
+    print(pkg_path+'/2017-10-31-22-06-52/')
+    print(pkg_path+'/2017-10-31-22-06-52/')
 
     return LaunchDescription([
         launch_ros.actions.Node(
@@ -31,9 +37,9 @@ def generate_launch_description():
             package="rviz2",
             executable="rviz2",
             name="rviz2",
-            arguments=['-d'+pkg_path+'config/rviz2.rviz']
+            arguments=['-d'+pkg_path+'/config/rviz2.rviz']
         ),
         launch.actions.ExecuteProcess(
-            cmd=['ros2','bag','play','2017-10-31-22-06-52/']
+            cmd=['ros2','bag','play',pkg_path+'/2017-10-31-22-06-52/']
         )
     ])
