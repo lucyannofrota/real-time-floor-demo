@@ -31,7 +31,7 @@ def generate_launch_description():
             package="rviz2",
             executable="rviz2",
             name="rviz2",
-            arguments=['-d'+'config/rviz2.rviz']
+            arguments=['-d'+pkg_path+'config/rviz2.rviz']
         ),
         launch.actions.ExecuteProcess(
             cmd=['ros2','bag','play','2017-10-31-22-06-52/']
